@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Serhii Cherevatin — Full Stack Engineer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="print.css" media="print" />
+  </head>
+  <body>
+    <header class="header">
+      <div>
+        <h1>Serhii Cherevatin</h1>
+        <p class="subtitle">Full-Stack Software Engineer</p>
+      </div>
+
+      <div class="controls">
+        <button id="themeToggle">🌙</button>
+        <button onclick="exportPDF()">📄 Export PDF</button>
+        <a href="/pdf.html" target="_blank">📄 PDF version</a>
+        <button onclick="downloadPDF()">⬇ Download PDF</button>
+      </div>
+    </header>
+
+    <section class="contacts">
+      <a href="mailto:sample@gmail.com">sample@gmail.com</a>
+      <span>•</span>
+      <a href="tel:+000000000">+000000000</a>
+      <span>•</span>
+      <span>Ukraine | Remote</span>
+      <span>•</span>
+      <a href="https://github.com/username" target="_blank">GitHub</a>
+      <span>•</span>
+      <a href="https://t.me/username" target="_blank">Telegram</a>
+      <span>•</span>
+      <a href="https://linkedin.com/in/username" target="_blank">LinkedIn</a>
+    </section>
+
+    <section>
+      <h2>Summary</h2>
+      <p>Full-stack software engineer with 3+ years of commercial experience building web and mobile applications from scratch.</p>
+      <p>Strong background in the .NET and JavaScript ecosystem with hands-on experience designing clean, scalable architectures using SOLID, CQRS, and DDD principles.</p>
+      <p>Comfortable working in production environments, collaborating with cross-functional teams, and taking ownership of features from design to deployment.</p>
+    </section>
+
+    <section>
+      <h2>Core Skills</h2>
+
+      <section>
+      <h3>Backend</h3>
+      <ul>
+        <li>C#, .NET</li>
+        <li>REST APIs, WebSockets, SignalR</li>
+        <li>PostgreSQL, MS SQL, MongoDB, Redis</li>
+        <li>Entity Framework Core, LINQ</li>
+        <li>OAuth2, OpenID Connect, JWT</li>
+        <li>CQRS, DDD, Event-driven architecture</li>
+      </ul>
+      </section>
+
+      <section>
+      <h3>Frontend & Mobile</h3>
+      <ul>
+        <li>TypeScript, JavaScript</li>
+        <li>Angular, React</li>
+        <li>React Native, Expo</li>
+        <li>RxJS, NgRx, Redux</li>
+        <li>HTML, CSS, SCSS</li>
+      </ul>
+      </section>
+
+      <section>
+      <h3>DevOps & Infrastructure</h3>
+      <ul>
+        <li>Docker, Nginx</li>
+        <li>CI/CD (Bitbucket Pipelines)</li>
+        <li>AWS S3</li>
+        <li>Git, HashiCorp Vault</li>
+        <li>Serilog, Sentry</li>
+      </ul>
+      </section>
+
+      <section>
+      <h3>Testing</h3>
+      <ul>
+        <li>xUnit, NUnit</li>
+      </ul>
+      </section>
+    </section>
+
+    <section>
+
+      <h2>Experience</h2>
+      
+      <h3>ABNK Premium Systems — Full-Stack Software Engineer</h3>
+      <p class="period">06/2022 – Present</p>
+    </section>
+
+      <section>
+      <h4>Project: CRM platform for social & educational sector (EU, 2 countries)</h4>
+      <ul>
+        <li>Designed and owned backend architecture from scratch</li>
+        <li>Independently built frontend from scratch with Angular after self-studying the framework</li>
+        <li>Acted as the key engineer on the project, mentoring other developers and helping with architecture and implementation decisions</li>
+        <li>Took full responsibility for releases, CI/CD pipelines, and production deployments</li>
+        <li>Set up and maintained infrastructure: Docker, Docker Compose, Nginx, Bitbucket Pipelines</li>
+        <li>Implemented authentication and authorization using IdentityServer4 (still used in production)</li>
+        <li>Designed and implemented an interactive testing module for children (backend + frontend)</li>
+        <li>Covered core domain logic with xUnit tests</li>
+        <li>Provided user support and handled production issues and incidents</li>
+        <li>System is running in production across 10+ instances in two countries, actively used by end users</li>
+      </ul>
+      <p class="tech">
+        <strong>Stack:</strong> .NET, Angular, PostgreSQL, Docker, Docker Compose, Nginx, Bitbucket Pipelines, IdentityServer4, xUnit
+      </p>
+      </section>
+
+      <section>
+      <h4>Project: Mobile application (Available on App Store and Google Play)</h4>
+      <ul>
+        <li>Designed and owned backend/mobile architecture from scratch.</li>
+        <li>Owned the full development lifecycle: architecture, implementation, releases, and app store publishing</li>
+        <li>Designed technical and architectural solutions under unclear and evolving requirements, making independent decisions</li>
+        <li>Built and maintained CI/CD pipelines and infrastructure for backend services</li>
+        <li>Managed mobile releases and test distribution (TestFlight / internal testing)</li>
+        <li>Integrated production monitoring and crash reporting (Sentry)</li>
+        <li>Implemented OTA updates, background tasks, notifications, and offline-ready state management</li>
+        <li>Worked with complex content rendering (EPUB), including maintaining a fork of an open-source library to fix rendering issues</li>
+        <li>Covered mobile logic with Jest and React Native Testing Library</li>
+        <li>Application is live in production and actively developed</li>
+      </ul>
+      <p class="tech">
+        <strong>Stack:</strong> React Native, Expo, TypeScript, Redux Toolkit, Jest, Sentry, .NET, PostgreSQL, Duende Identity
+      </p>
+      </section>
+
+      <section>
+      <h4>Early Project: Mobile game backend</h4>
+      <ul>
+        <li>Refactored legacy backend code and optimized database structure</li>
+        <li>Performed data migrations and gradual transition to a new data model</li>
+        <li>Implemented new backend features</li>
+      </ul>
+      <p class="tech">
+        <strong>Stack:</strong> .NET, MongoDB
+      </p>
+      </section>
+
+      <section>
+      <h3>Robotec — Python Software Developer / Engineer</h3>
+      <p class="period">10/2021 – 01/2022</p>
+      <ul>
+        <li>Developed software for robotic systems using Python</li>
+        <li>Worked with ROS and hardware integration</li>
+        <li>Debugged software and hardware-related issues</li>
+      </ul>
+
+      <p class="tech"><strong>Tech stack:</strong> Python, ROS, Robotics</p>
+      </section>
+
+      <section>
+      <h2>Education & Certifications</h2>
+      <ul>
+        <li><strong>Master’s in Computer Science</strong> — NTU "Kharkiv Polytechnic Institute" (2022–2023)</li>
+        <li><strong>Bachelor’s in Computer Science</strong> — NTU "Kharkiv Polytechnic Institute" (2018–2022)</li>
+        <li>
+          <a href="https://learn.microsoft.com/en-us/certifications/azure-fundamentals/" target="_blank"> Microsoft Certified: Azure Fundamentals (2025) </a>
+        </li>
+        <li>
+          <a href="https://www.udemy.com/course/the-complete-guide-to-angular-2/" target="_blank"> Udemy — Angular: The Complete Guide (2022) </a>
+        </li>
+        <li>.NET Internship — ABNK Premium Systems (2022)</li>
+      </ul>
+
+    <section>
+      <h2>Languages</h2>
+      <ul>
+        <li>English — B2</li>
+        <li>Ukrainian — Native</li>
+        <li>Russian — Native</li>
+      </ul>
+    </section>
+
+    <script src="main.js"></script>
+  </body>
+</html>

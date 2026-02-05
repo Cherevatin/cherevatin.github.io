@@ -1,0 +1,32 @@
+@page {
+  margin: 20mm;
+}
+
+body {
+  background: #fff !important;
+  color: #000 !important;
+  font-size: 12px;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.controls,
+#themeToggle {
+  display: none !important;
+}
+
+section {
+  page-break-inside: avoid;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  margin-top: 32px;
+  font-size: 18px;
+}
