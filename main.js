@@ -10,7 +10,52 @@ const moonIcon = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" st
 function applyTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
   toggle.innerHTML = theme === "dark" ? sunIcon : moonIcon;
+  
+  const avatar = document.querySelector(".profile-photo");
+  if (avatar) {
+    avatar.src = theme === "dark" ? "./assets/avatar-dark.png" : "./assets/avatar-light.png";
+  }
 }
+
+// Avatar preview functionality
+document.addEventListener("DOMContentLoaded", () => {
+  const avatar = document.querySelector(".profile-photo");
+  if (!avatar) return;
+  
+  // Create preview container
+  const preview = document.createElement("div");
+  preview.className = "avatar-preview";
+  preview.innerHTML = `<img src="${avatar.src}" alt="Profile Preview" /><div class="preview-close">×</div>`;
+  document.body.appendChild(preview);
+  
+  // Show preview on click
+  avatar.addEventListener("click", (e) => {
+    e.preventDefault();
+    preview.classList.add("show");
+  });
+  
+  // Hide preview on close button click
+  const closeBtn = preview.querySelector(".preview-close");
+  closeBtn.addEventListener("click", () => {
+    preview.classList.remove("show");
+  });
+  
+  // Hide preview when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!avatar.contains(e.target) && !preview.contains(e.target)) {
+      preview.classList.remove("show");
+    }
+  });
+  
+  // Position preview centered on screen
+  avatar.addEventListener("click", (e) => {
+    if (preview.classList.contains("show")) {
+      preview.style.left = "50%";
+      preview.style.top = "50%";
+      preview.style.transform = "translate(-50%, -50%) scale(1)";
+    }
+  });
+});
 
 const savedTheme = localStorage.getItem("theme");
 applyTheme(savedTheme || getSystemTheme());
@@ -43,10 +88,15 @@ document.querySelectorAll("section").forEach((sec) => {
 });
 
 function downloadPDF() {
-  const link = document.createElement("a");
-  link.href = "/cv.pdf";
-  link.download = "Name_Surname_CV.pdf";
-  link.click();
+  // Open pdf.html in a new tab and trigger print
+  const printWindow = window.open('pdf.html', '_blank');
+  
+  // Wait for the page to load, then trigger print
+  printWindow.addEventListener('load', () => {
+    setTimeout(() => {
+      printWindow.print();
+    }, 500);
+  });
 }
 
 document.querySelectorAll(".copy-btn").forEach((btn) => {
