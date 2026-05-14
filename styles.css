@@ -700,6 +700,7 @@ h1, h2, h3, h4 {
   font-size: 0.9rem;
   color: var(--text-light);
   font-style: italic;
+  margin-top: 4px;
 }
 .tech-stack strong {
   color: var(--text-muted);
