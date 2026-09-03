@@ -1,11 +1,52 @@
 @page {
-  margin: 20mm;
+  size: A4;
+  margin: 12mm;
 }
 
+:root,
+[data-theme="dark"] {
+  --bg-body: #fff;
+  --bg-sidebar: #f9f9f8;
+  --text-main: #1c1c1e;
+  --text-muted: #575757;
+  --text-light: #767676;
+  --accent: #58705e;
+  --accent-hover: #3e5243;
+  --border: #e5e5e0;
+  --path-bg: #f0f0ed;
+}
+
+html,
 body {
   background: #fff !important;
   color: #000 !important;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+.cv-page {
+  box-shadow: none !important;
+  max-width: none !important;
+}
+
+.cv-grid {
+  display: block !important;
+}
+
+.cv-sidebar {
+  float: left;
+  width: 31%;
+  height: auto !important;
+  padding: 18px 16px;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.cv-content {
+  margin-left: 31%;
+  padding: 24px;
 }
 
 a {
@@ -19,7 +60,93 @@ a {
 }
 
 section {
-  page-break-inside: avoid;
+  break-inside: auto;
+}
+
+.job-header,
+.project-title,
+.tech-stack,
+.edu-item,
+.cert-item,
+.language-item,
+.skill-group {
+  break-inside: avoid;
+}
+
+.job-details li {
+  break-inside: avoid;
+}
+
+.avatar-preview,
+.copy-btn {
+  display: none !important;
+}
+
+.fade,
+.fade.visible {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.profile-container {
+  margin-bottom: 12px;
+}
+
+.profile-photo {
+  width: 116px;
+  height: 116px;
+}
+
+.contacts {
+  margin-bottom: 12px;
+}
+
+.contact-item {
+  margin-bottom: 6px;
+}
+
+.cv-sidebar h2 {
+  margin-top: 12px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.cv-sidebar h3 {
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+.skill-group {
+  margin-bottom: 9px;
+}
+
+.skill-group ul li {
+  margin-bottom: 2px;
+}
+
+.edu-grid,
+.cert-grid {
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.edu-item,
+.cert-item {
+  margin-bottom: 0;
+  padding: 8px;
+}
+
+.cert-issuer {
+  margin-bottom: 4px;
+}
+
+.language-list {
+  gap: 2px;
+}
+
+.language-item {
+  padding: 4px 0;
 }
 
 h1 {

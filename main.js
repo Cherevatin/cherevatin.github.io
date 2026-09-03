@@ -67,9 +67,40 @@ toggle.addEventListener("click", () => {
   applyTheme(next);
 });
 
-function exportPDF() {
-  window.print();
+function monthIndex(value) {
+  const match = /^(\d{4})-(\d{2})$/.exec(value);
+  if (!match) return null;
+
+  const year = Number(match[1]);
+  const month = Number(match[2]);
+  if (month < 1 || month > 12) return null;
+
+  return year * 12 + month - 1;
 }
+
+function formatDuration(totalMonths) {
+  const years = Math.floor(totalMonths / 12);
+  const months = totalMonths % 12;
+  const parts = [];
+
+  if (years > 0) parts.push(`${years} ${years === 1 ? "year" : "years"}`);
+  if (months > 0 || years === 0) parts.push(`${months} ${months === 1 ? "month" : "months"}`);
+
+  return parts.join(", ");
+}
+
+const now = new Date();
+const currentMonth = now.getFullYear() * 12 + now.getMonth();
+
+document.querySelectorAll(".project-duration").forEach((duration) => {
+  const startMonth = monthIndex(duration.dataset.projectStart);
+  const endMonth = duration.dataset.projectEnd ? monthIndex(duration.dataset.projectEnd) : currentMonth;
+
+  if (startMonth === null || endMonth === null || endMonth < startMonth) return;
+
+  const ongoing = duration.dataset.projectOngoing === "true" ? " (ongoing)" : "";
+  duration.textContent = `${formatDuration(endMonth - startMonth)}${ongoing}`;
+});
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -86,18 +117,6 @@ document.querySelectorAll("section").forEach((sec) => {
   sec.classList.add("fade");
   observer.observe(sec);
 });
-
-function downloadPDF() {
-  // Open pdf.html in a new tab and trigger print
-  const printWindow = window.open('pdf.html', '_blank');
-  
-  // Wait for the page to load, then trigger print
-  printWindow.addEventListener('load', () => {
-    setTimeout(() => {
-      printWindow.print();
-    }, 500);
-  });
-}
 
 document.querySelectorAll(".copy-btn").forEach((btn) => {
   btn.addEventListener("click", async () => {

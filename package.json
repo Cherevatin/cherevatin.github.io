@@ -1,0 +1,8 @@
+{
+  "name": "cherevatin-cv",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "pdf": "node scripts/generate-pdf.mjs"
+  }
+}
